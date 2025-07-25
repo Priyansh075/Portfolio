@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
 import SplitText from './SplitText';
 import Model from './Model';
 import MagnetLines from './MagnetLines';
-
+import { useState } from 'react';
 const rotatingTexts = [
   'Web Developer',
   'React Enthusiast',
@@ -11,24 +10,7 @@ const rotatingTexts = [
 ];
 
 const About = () => {
-  const aboutRef = useRef(null);
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const aboutTop = aboutRef.current.offsetTop;
-      const scrollPosition = window.scrollY;
-      if (scrollPosition >= aboutTop - 100) {
-        setAnimate(true);
-      } else {
-        setAnimate(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <section id="about" className="relative flex flex-col md:flex-row items-center justify-between px-8 py-20 gap-12 bg-background overflow-hidden min-h-[500px]">
@@ -50,7 +32,7 @@ const About = () => {
         <Model />
         <div className="absolute inset-0 bg-background/70" />
       </div>
-      <div className="flex-1 space-y-6 relative z-20" ref={aboutRef}>
+      <div className="flex-1 space-y-6 relative z-20">
         <SplitText
           text="Hi, I am Priyansh Dhurwey"
           className="text-6xl md:text-4xl lg:text-5xl font-semibold text-center"
@@ -63,11 +45,12 @@ const About = () => {
           threshold={0.1}
           rootMargin="-100px"
           textAlign="center"
-          animate={animate}
         />
         <div className="text-6xl md:text-4xl lg:text-5xl font-semibold flex items-center gap-3">
           <span className="text-highlight">I'm a</span>
-          <span className="rotating-text text-accent inline-block align-middle"></span>
+          <span className="text-pink-500 text-6xl md:text-4xl lg:text-5xl font-semibold">
+            {rotatingTexts[0]}
+          </span>
         </div>
       </div>
       {/* 3D Model removed for mobile */}
