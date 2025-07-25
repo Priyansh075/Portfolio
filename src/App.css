@@ -1,0 +1,92 @@
+/* Navbar slide-in animation */
+@keyframes navbar-slide {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animate-navbar-slide {
+  animation: navbar-slide 0.8s cubic-bezier(0.4,0,0.2,1) 1;
+}
+
+/* Rotating text animation */
+.rotating-text {
+  display: inline-block;
+  min-width: 180px;
+  height: 1.5em;
+  vertical-align: bottom;
+  position: relative;
+}
+
+.rotating-text::after {
+  content: '';
+  animation: rotating-words 8s linear infinite;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  color: var(--tw-color-accent, #f472b6);
+  font-weight: bold;
+}
+
+@keyframes rotating-words {
+  0% { content: 'Web Developer'; }
+  25% { content: 'React Enthusiast'; }
+  50% { content: 'UI/UX Explorer'; }
+  75% { content: 'Open Source Contributor'; }
+  100% { content: 'Web Developer'; }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.nav-underline {
+  position: relative;
+}
+
+.nav-underline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #f472b6; /* accent color */
+  border-radius: 2px;
+  transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.nav-underline:hover::before {
+  width: 100%;
+}
+
+.logo-gradient {
+  transition: background 0.5s cubic-bezier(0.4,0,0.2,1), color 0.5s cubic-bezier(0.4,0,0.2,1), -webkit-text-fill-color 0.5s cubic-bezier(0.4,0,0.2,1), background-position 0.5s cubic-bezier(0.4,0,0.2,1);
+  background: linear-gradient(90deg, #f472b6 0%, #0ea5e9 100%);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+}
+.logo-gradient:hover {
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.navbar-border {
+  border-bottom: 1.5px solid rgba(100, 116, 139, 0.18); /* subtle slate border */
+  box-shadow: 0 2px 8px 0 rgba(15, 23, 42, 0.04);
+}
