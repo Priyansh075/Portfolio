@@ -7,7 +7,7 @@ const rotatingTexts = [
   'Web Developer',
   'React Enthusiast',
   'Competitive Programmer',
-  'Mechanical Undergrad Student',
+  
 ];
 
 const About = () => {
