@@ -1,7 +1,8 @@
 import SplitText from './SplitText';
 import Model from './Model';
 import MagnetLines from './MagnetLines';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 const rotatingTexts = [
   'Web Developer',
   'React Enthusiast',
@@ -11,6 +12,13 @@ const rotatingTexts = [
 
 const About = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((currentIndex + 1) % rotatingTexts.length);
+    }, 2000); // rotate every 2 seconds
+    return () => clearInterval(intervalId);
+  }, [currentIndex]);
 
   return (
     <section id="about" className="relative flex flex-col md:flex-row items-center justify-between px-8 py-20 gap-12 bg-background overflow-hidden min-h-[500px]">
@@ -49,7 +57,7 @@ const About = () => {
         <div className="text-6xl md:text-4xl lg:text-5xl font-semibold flex items-center gap-3">
           <span className="text-highlight">I'm a</span>
           <span className="text-pink-500 text-6xl md:text-4xl lg:text-5xl font-semibold">
-            {rotatingTexts[0]}
+            {rotatingTexts[currentIndex]}
           </span>
         </div>
       </div>
