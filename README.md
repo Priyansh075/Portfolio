@@ -1,12 +1,30 @@
-# React + Vite
+# 🌐 Personal Portfolio - Priyansh Dhurwey
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal portfolio website built using **React**. It showcases my skills, projects, and experience as a developer, with smooth animations, interactive 3D elements, and a clean UI. The site is designed to be responsive, minimal, and performance-optimized.
 
-Currently, two official plugins are available:
+### 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** – Frontend framework
+- **Framer Motion** – For page transitions and smooth animations
+- **React-Bits** – Reusable UI components and hooks for better state and logic management
+- **Spline** – 3D scenes and interactive elements
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📸 Features
+
+- ⚡ Smooth animations and transitions using Framer Motion
+- 🎨 Visually appealing and minimal design
+- 🧠 Modular & reusable components with React-Bits
+- 🧩 3D interactive assets powered by Spline
+- 📱 Fully responsive for all screen sizes
+- 🌙 Dark/Light mode toggle *(optional, if implemented)*
+
+---
+
+### 🛠️ Setup Instructions
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/Priyansh075/Portfolio.git
+   cd portfolio
